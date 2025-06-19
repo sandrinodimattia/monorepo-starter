@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project
+
+## Dependencies
+
+- Use `pnpm` to install dependencies
