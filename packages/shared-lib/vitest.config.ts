@@ -1,1 +1,1 @@
-export { config as default } from '@repo/config-vitest/vitest.config';
+export { config as default } from '@repo/config-vitest/node';
