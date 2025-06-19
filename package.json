@@ -1,0 +1,25 @@
+{
+  "name": "monorepo-starter",
+  "version": "1.0.0",
+  "description": "A minimal boilerplate for a monorepo using Turborepo and TypeScript",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "type-check": "turbo run type-check"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3",
+    "@types/node": "^24.0.3",
+    "eslint": "^9.29.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1"
+  },
+  "author": "Sandrino Di Mattia",
+  "license": "MIT"
+}
