@@ -13,12 +13,13 @@
     "type-check": "turbo run type-check"
   },
   "devDependencies": {
-    "turbo": "^2.5.4",
-    "typescript": "^5.8.3",
     "@types/node": "^24.0.3",
-    "eslint": "^9.29.0",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
-    "@typescript-eslint/parser": "^8.34.1"
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^9.29.0",
+    "eslint-import-resolver-vite": "^2.1.0",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
   },
   "author": "Sandrino Di Mattia",
   "license": "MIT"

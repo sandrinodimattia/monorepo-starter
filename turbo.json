@@ -54,9 +54,18 @@
       "dependsOn": [
         "^build"
       ],
+      "outputs": [],
+      "env": [
+        "NODE_ENV",
+        "CI"
+      ]
+    },
+    "test:coverage": {
+      "dependsOn": [
+        "^test"
+      ],
       "outputs": [
-        "coverage/**",
-        "test-results/**"
+        "coverage/**"
       ],
       "env": [
         "NODE_ENV",
@@ -69,10 +78,7 @@
       ],
       "cache": false,
       "persistent": true,
-      "outputs": [
-        "coverage/**",
-        "test-results/**"
-      ],
+      "outputs": [],
       "env": [
         "NODE_ENV"
       ]

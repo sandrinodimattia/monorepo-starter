@@ -1,9 +1,13 @@
 {
   "extends": "@repo/config-typescript/library",
-  "include": ["src/*.ts", "src/**/*.ts"],
+  // Specify files to include in compilation
+  "include": ["src/**/*.ts", "eslint.config.js"],
+  // Specify files to exclude from compilation
   "exclude": ["node_modules", "dist"],
+  // TypeScript compiler options
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "src",
+    "outDir": "dist",
+    "moduleResolution": "bundler"
   }
 }

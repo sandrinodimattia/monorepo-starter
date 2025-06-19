@@ -1,0 +1,11 @@
+{
+  "extends": "@repo/config-typescript/library",
+  // Specify files to include in compilation for testing
+  "include": ["./eslint.config.js", "./src/**/*.ts", "./src/**/*.test.ts"],
+  // Specify files to exclude from compilation
+  "exclude": ["node_modules", "dist", "./vitest.config.ts"],
+  // TypeScript compiler options for testing
+  "compilerOptions": {
+    "noEmit": true
+  }
+}
