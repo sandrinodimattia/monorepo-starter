@@ -7,7 +7,6 @@
   // TypeScript compiler options
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist",
-    "moduleResolution": "bundler"
+    "outDir": "dist"
   }
 }

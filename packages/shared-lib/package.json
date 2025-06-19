@@ -19,8 +19,6 @@
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",
     "@repo/config-typescript": "workspace:*",
-    "@repo/config-vitest": "workspace:*",
-    "@vitest/coverage-v8": "^3.2.0",
-    "vitest": "^3.2.0"
+    "@repo/config-vitest": "workspace:*"
   }
 }

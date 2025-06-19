@@ -8,11 +8,7 @@ export default [
         project: './tsconfig.test.json',
       },
     },
-  },
-  {
     files: ['./src/**/*.ts', './src/**/*.test.ts'],
-  },
-  {
     settings: {
       'import/resolver': {
         node: {
