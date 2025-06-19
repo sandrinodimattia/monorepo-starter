@@ -1,5 +1,4 @@
-import nodePlugin from 'eslint-plugin-node';
-import securityPlugin from 'eslint-plugin-security';
+import nodePlugin from 'eslint-plugin-n';
 
 import { config as baseConfig } from './base.js';
 
@@ -10,10 +9,8 @@ import { config as baseConfig } from './base.js';
  */
 export const config = [
   ...baseConfig,
+  nodePlugin.configs['flat/recommended-script'],
   {
-    plugins: {
-      node: nodePlugin.configs.recommended,
-    },
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -23,9 +20,9 @@ export const config = [
       },
     },
     rules: {
-      'no-process-exit': 'error',
-      'node/no-missing-import': 'off',
-      'node/no-unpublished-import': 'off',
+      'no-process-exit': 'off',
+      'n/no-missing-import': 'off',
+      'n/no-unpublished-import': 'off',
       'security/detect-non-literal-fs-filename': 'warn',
       'security/detect-eval-with-expression': 'error',
       'security/detect-no-csrf-before-method-override': 'error',

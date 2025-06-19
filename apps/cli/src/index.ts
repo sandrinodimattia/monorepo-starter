@@ -1,5 +1,4 @@
-#!/usr/bin/env node
-/* eslint-disable no-process-exit */
+/* eslint-disable n/no-process-exit */
 import { calculateSum } from '@repo/shared-lib';
 
 function main() {

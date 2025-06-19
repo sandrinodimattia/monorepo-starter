@@ -14,18 +14,18 @@ export const config = [
   js.configs.recommended,
   eslintConfigPrettier,
   ...tseslint.configs.recommended,
+  securityPlugin.configs.recommended,
   {
-    plugins: {
-      turbo: turboPlugin,
-      security: securityPlugin,
-    },
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
+    plugins: {
+      turbo: turboPlugin,
+    },
     rules: {
+      ...turboPlugin.configs.recommended.rules,
       'turbo/no-undeclared-env-vars': 'warn',
-      'no-process-exit': 'error',
       'no-process-env': 'warn',
       'security/detect-non-literal-fs-filename': 'warn',
       'security/detect-eval-with-expression': 'error',
