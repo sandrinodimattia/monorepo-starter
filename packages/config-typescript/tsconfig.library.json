@@ -1,0 +1,55 @@
+{
+  // JSON schema for TypeScript configuration validation
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // Display name for the configuration
+  "display": "TypeScript Library",
+  // Extend the base TypeScript configuration
+  "extends": "./tsconfig.base.json",
+  // Compiler options specific to TypeScript libraries
+  "compilerOptions": {
+    // Target ES2024 for compilation
+    "target": "ES2024",
+    // Use ESNext module system
+    "module": "ESNext",
+    // Use bundler module resolution
+    "moduleResolution": "Bundler",
+    // Generate corresponding .d.ts files
+    "declaration": true,
+    // Generate source maps for declaration files
+    "declarationMap": true,
+    // Generate source maps for debugging
+    "sourceMap": true,
+    // Output directory for compiled files
+    "outDir": "dist",
+    // Enable all strict type checking options
+    "strict": true,
+    // Disallow implicit any types
+    "noImplicitAny": true,
+    // Enable strict null checks
+    "strictNullChecks": true,
+    // Enable strict function types
+    "strictFunctionTypes": true,
+    // Enable strict bind, call, and apply checks
+    "strictBindCallApply": true,
+    // Report errors on unused local variables
+    "noUnusedLocals": true,
+    // Report errors on unused parameters
+    "noUnusedParameters": true,
+    // Report errors when functions don't return on all code paths
+    "noImplicitReturns": true,
+    // Report errors for fallthrough cases in switch statements
+    "noFallthroughCasesInSwitch": true,
+    // Ensure each file is treated as a separate module
+    "isolatedModules": true,
+    // Skip type checking of declaration files
+    "skipLibCheck": true,
+    // Enable exact optional property types
+    "exactOptionalPropertyTypes": true,
+    // Require explicit override keyword
+    "noImplicitOverride": true,
+    // Use define semantics for class fields
+    "useDefineForClassFields": true,
+    // Require explicit module syntax
+    "verbatimModuleSyntax": true
+  }
+}

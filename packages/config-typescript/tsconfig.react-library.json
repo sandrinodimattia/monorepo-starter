@@ -1,0 +1,17 @@
+{
+  // JSON schema for TypeScript configuration validation
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // Extend the base TypeScript configuration
+  "extends": "./tsconfig.base.json",
+  // Compiler options specific to React libraries
+  "compilerOptions": {
+    // Use React JSX transform
+    "jsx": "react-jsx",
+    // Require explicit module syntax
+    "verbatimModuleSyntax": true,
+    // Require explicit override keyword
+    "noImplicitOverride": true,
+    // Use define semantics for class fields
+    "useDefineForClassFields": true
+  }
+}

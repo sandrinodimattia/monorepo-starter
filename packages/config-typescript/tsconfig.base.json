@@ -1,0 +1,47 @@
+{
+  // JSON schema for TypeScript configuration validation
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // Compiler options for TypeScript
+  "compilerOptions": {
+    // Generate corresponding .d.ts files
+    "declaration": true,
+    // Generate source maps for declaration files
+    "declarationMap": true,
+    // Enable interop between CommonJS and ES Modules
+    "esModuleInterop": true,
+    // Disable incremental compilation
+    "incremental": false,
+    // Ensure each file is treated as a separate module
+    "isolatedModules": true,
+    // Include library definitions for ES2024, DOM, and DOM iterables
+    "lib": [
+      "es2024",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    // Use Node.js module resolution strategy
+    "module": "NodeNext",
+    // Force module detection
+    "moduleDetection": "force",
+    // Use Node.js module resolution
+    "moduleResolution": "NodeNext",
+    // Enable strict checking of indexed access
+    "noUncheckedIndexedAccess": true,
+    // Allow importing JSON files as modules
+    "resolveJsonModule": true,
+    // Skip type checking of declaration files
+    "skipLibCheck": true,
+    // Enable all strict type checking options
+    "strict": true,
+    // Target ES2024 for compilation
+    "target": "ES2024",
+    // Disable importing TypeScript extensions
+    "allowImportingTsExtensions": false,
+    // Enable exact optional property types
+    "exactOptionalPropertyTypes": true,
+    // Require explicit override keyword
+    "noImplicitOverride": true,
+    // Use define semantics for class fields
+    "useDefineForClassFields": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  // JSON schema for TypeScript configuration validation
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // Extend the base TypeScript configuration
+  "extends": "./tsconfig.base.json",
+  // Compiler options specific to Next.js applications
+  "compilerOptions": {
+    // TypeScript plugins for Next.js
+    "plugins": [
+      {
+        // Next.js TypeScript plugin
+        "name": "next"
+      }
+    ],
+    // Use ESNext module system
+    "module": "ESNext",
+    // Use bundler module resolution
+    "moduleResolution": "Bundler",
+    // Allow JavaScript files alongside TypeScript
+    "allowJs": true,
+    // Preserve JSX syntax for Next.js processing
+    "jsx": "preserve",
+    // Don't emit output files (Next.js handles compilation)
+    "noEmit": true,
+    // Enable incremental compilation
+    "incremental": true,
+    // Require explicit module syntax
+    "verbatimModuleSyntax": true
+  }
+}
