@@ -12,8 +12,7 @@ export const config = [
   ...baseConfig,
   {
     plugins: {
-      node: nodePlugin,
-      security: securityPlugin,
+      node: nodePlugin.configs.recommended,
     },
     languageOptions: {
       ecmaVersion: 'latest',
@@ -27,16 +26,10 @@ export const config = [
       'no-process-exit': 'error',
       'node/no-missing-import': 'off',
       'node/no-unpublished-import': 'off',
-      'node/no-unsupported-features/es-syntax': [
-        'error',
-        { ignores: ['modules'] },
-      ],
       'security/detect-non-literal-fs-filename': 'warn',
       'security/detect-eval-with-expression': 'error',
       'security/detect-no-csrf-before-method-override': 'error',
       'security/detect-possible-timing-attacks': 'warn',
     },
   },
-  'plugin:node/recommended',
-  'plugin:security/recommended',
 ];
