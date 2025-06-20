@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/config-typescript/tsconfig.react-library",
+  // Specify files to include in compilation
+  "include": ["src/**/*.ts", "src/**/*.tsx", "eslint.config.js"],
+  // Specify files to exclude from compilation
+  "exclude": ["node_modules", "dist"],
+  // TypeScript compiler options
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

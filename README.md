@@ -7,13 +7,13 @@ A minimal boilerplate for a monorepo using Turborepo and TypeScript.
 1. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. Build all packages:
 
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 3. Run the CLI:
@@ -21,6 +21,13 @@ A minimal boilerplate for a monorepo using Turborepo and TypeScript.
    ```bash
    # From the root directory
    pnpm --filter=@repo/cli run start
+   ```
+
+4. Run the Web Application:
+
+   ```bash
+   # From the root directory
+   pnpm --filter=@repo/web run dev
    ```
 
 ## Available Scripts
