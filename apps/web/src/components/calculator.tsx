@@ -22,7 +22,7 @@ export function Calculator() {
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg border border-gray-100">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Calculator (Environment: {env.VITE_FOO})
+        Calculator (Node Environment: {env.NODE_ENV}, Foo: {env.VITE_FOO})
       </h2>
 
       <div className="mb-4">

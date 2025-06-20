@@ -28,6 +28,23 @@
         "REACT_APP_*"
       ]
     },
+    "preview": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": [
+        "build",
+        "^preview"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "env": [
+        "NODE_ENV",
+        "NEXT_PUBLIC_*",
+        "VITE_*",
+        "REACT_APP_*"
+      ]
+    },
     "dev": {
       "cache": false,
       "persistent": true,

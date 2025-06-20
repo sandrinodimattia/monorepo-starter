@@ -10,6 +10,7 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "clean": "turbo run clean",
+    "preview": "turbo run preview",
     "type-check": "turbo run type-check"
   },
   "devDependencies": {

@@ -7,4 +7,5 @@ const schema = createEnvSchema(
   })
 );
 
-export const env: z.infer<typeof schema> = loadEnv(schema, import.meta.env);
+// eslint-disable-next-line no-process-env
+export const env: z.infer<typeof schema> = loadEnv(schema, { ...process.env, ...import.meta.env });
