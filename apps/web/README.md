@@ -26,5 +26,5 @@ VITE_FOO=123
 
    ```bash
    # From the root directory
-   pnpm --filter=@repo/cli run start
+   pnpm --filter=@repo/web run dev
    ```
