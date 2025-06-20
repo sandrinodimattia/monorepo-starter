@@ -1,12 +1,21 @@
 {
   "name": "@repo/config-vitest",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
-  "exports": {
-    "./node": "./node.js"
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@repo/config-eslint": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
     "vitest": "^3.2.0"
   },
   "dependencies": {}
