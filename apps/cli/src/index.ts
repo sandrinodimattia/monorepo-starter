@@ -1,6 +1,8 @@
 /* eslint-disable n/no-process-exit */
 import { calculateSum } from '@repo/shared-lib';
 
+import { env } from './lib/env.js';
+
 function main() {
   const args = process.argv.slice(2);
   if (args.length === 0 || args[0] !== 'add') {
@@ -23,6 +25,7 @@ function main() {
 
     const result = calculateSum(num1, num2);
     console.log(`${num1} + ${num2} = ${result}`);
+    console.log(`Environment variable FOO: ${env.FOO}`);
     return;
   }
 }

@@ -1,9 +1,10 @@
 {
-  "name": "@repo/cli",
-  "version": "1.0.0",
-  "description": "A basic CLI application",
-  "main": "dist/index.js",
+  "name": "@repo/env",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -11,16 +12,17 @@
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "type-check": "tsc --noEmit",
-    "start": "node dist/index.js"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@repo/env": "workspace:*",
-    "@repo/shared-lib": "workspace:*",
+    "dotenv": "^16.5.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",
     "@repo/config-typescript": "workspace:*",
-    "@types/node": "^24.0.3"
+    "@repo/config-vitest": "workspace:*"
   }
 }
