@@ -16,6 +16,7 @@
   "dependencies": {
     "@repo/env": "workspace:*",
     "@repo/shared-lib": "workspace:*",
+    "dotenv": "^16.5.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {

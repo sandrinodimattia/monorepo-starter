@@ -1,15 +1,9 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 /* eslint-disable no-process-env */
 import { z } from 'zod';
-import * as dotenv from 'dotenv';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 import { baseEnvSchema, createEnvSchema, loadEnv } from './index';
-
-// Mock dotenv
-vi.mock('dotenv', () => ({
-  config: vi.fn(),
-}));
 
 // Mock process.env
 const originalEnv = process.env;
@@ -30,7 +24,6 @@ describe('env package', () => {
     it('should validate correct environment variables', () => {
       const validEnv = {
         NODE_ENV: 'development',
-        LOG_LEVEL: 'info',
       };
 
       const result = baseEnvSchema.parse(validEnv);
@@ -41,7 +34,6 @@ describe('env package', () => {
       const result = baseEnvSchema.parse({});
       expect(result).toEqual({
         NODE_ENV: 'development',
-        LOG_LEVEL: 'info',
       });
     });
 
@@ -54,24 +46,9 @@ describe('env package', () => {
       });
     });
 
-    it('should accept all valid LOG_LEVEL values', () => {
-      const validLogLevels = ['debug', 'info', 'warn', 'error'];
-
-      validLogLevels.forEach((logLevel) => {
-        const result = baseEnvSchema.parse({ LOG_LEVEL: logLevel });
-        expect(result.LOG_LEVEL).toBe(logLevel);
-      });
-    });
-
     it('should throw error for invalid NODE_ENV', () => {
       expect(() => {
         baseEnvSchema.parse({ NODE_ENV: 'invalid' });
-      }).toThrow();
-    });
-
-    it('should throw error for invalid LOG_LEVEL', () => {
-      expect(() => {
-        baseEnvSchema.parse({ LOG_LEVEL: 'invalid' });
       }).toThrow();
     });
   });
@@ -87,7 +64,6 @@ describe('env package', () => {
 
       const validEnv = {
         NODE_ENV: 'development',
-        LOG_LEVEL: 'info',
         DATABASE_URL: 'postgres://localhost:5432/db',
         PORT: '3000',
       };
@@ -95,7 +71,6 @@ describe('env package', () => {
       const result = extendedSchema.parse(validEnv);
       expect(result).toEqual({
         NODE_ENV: 'development',
-        LOG_LEVEL: 'info',
         DATABASE_URL: 'postgres://localhost:5432/db',
         PORT: 3000,
       });
@@ -115,53 +90,29 @@ describe('env package', () => {
       const result = extendedSchema.parse(envWithOnlyCustom);
       expect(result).toEqual({
         NODE_ENV: 'development',
-        LOG_LEVEL: 'info',
         API_KEY: 'secret-key',
       });
     });
   });
 
   describe('loadEnv', () => {
-    it('should load environment variables from .env file', () => {
-      const mockConfig = vi.mocked(dotenv.config);
-      mockConfig.mockReturnValue({});
-
+    it('should load environment variables from the env object', () => {
       const customSchema = z.object({
         DATABASE_URL: z.string(),
       });
       const schema = createEnvSchema(customSchema);
 
       process.env.NODE_ENV = 'development';
-      process.env.LOG_LEVEL = 'info';
       process.env.DATABASE_URL = 'postgres://localhost:5432/db';
 
-      const result = loadEnv(schema);
-
-      expect(mockConfig).toHaveBeenCalledWith({ path: '.env' });
+      const result = loadEnv(schema, process.env);
       expect(result).toEqual({
         NODE_ENV: 'development',
-        LOG_LEVEL: 'info',
         DATABASE_URL: 'postgres://localhost:5432/db',
       });
     });
 
-    it('should load environment variables from custom path', () => {
-      const mockConfig = vi.mocked(dotenv.config);
-      mockConfig.mockReturnValue({});
-
-      const schema = createEnvSchema(z.object({}));
-
-      process.env.NODE_ENV = 'production';
-
-      loadEnv(schema, '.env.production');
-
-      expect(mockConfig).toHaveBeenCalledWith({ path: '.env.production' });
-    });
-
     it('should throw ZodError for invalid environment variables', () => {
-      const mockConfig = vi.mocked(dotenv.config);
-      mockConfig.mockReturnValue({});
-
       const customSchema = z.object({
         PORT: z.string().transform(Number),
       });
@@ -171,49 +122,17 @@ describe('env package', () => {
       process.env.PORT = 'not-a-number';
 
       const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-      const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => {
-        throw new Error('process.exit called');
-      });
 
-      expect(() => loadEnv(schema)).toThrow('process.exit called');
+      expect(() => loadEnv(schema, process.env)).toThrow('Failed to load environment variables');
       expect(consoleSpy).toHaveBeenCalledWith(
         '❌ Invalid environment variables:',
         expect.any(String)
       );
-      expect(exitSpy).toHaveBeenCalledWith(1);
 
       consoleSpy.mockRestore();
-      exitSpy.mockRestore();
-    });
-
-    it('should handle non-Zod errors gracefully', () => {
-      const mockConfig = vi.mocked(dotenv.config);
-      mockConfig.mockImplementation(() => {
-        throw new Error('File not found');
-      });
-
-      const schema = createEnvSchema(z.object({}));
-
-      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
-      const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => {
-        throw new Error('process.exit called');
-      });
-
-      expect(() => loadEnv(schema)).toThrow('process.exit called');
-      expect(consoleSpy).toHaveBeenCalledWith(
-        '❌ Error loading environment variables:',
-        expect.any(Error)
-      );
-      expect(exitSpy).toHaveBeenCalledWith(1);
-
-      consoleSpy.mockRestore();
-      exitSpy.mockRestore();
     });
 
     it('should work with extended schemas', () => {
-      const mockConfig = vi.mocked(dotenv.config);
-      mockConfig.mockReturnValue({});
-
       const customSchema = z.object({
         DATABASE_URL: z.string(),
         API_KEY: z.string(),
@@ -222,15 +141,13 @@ describe('env package', () => {
       const extendedSchema = createEnvSchema(customSchema);
 
       process.env.NODE_ENV = 'test';
-      process.env.LOG_LEVEL = 'debug';
       process.env.DATABASE_URL = 'postgres://test:5432/db';
       process.env.API_KEY = 'test-key';
 
-      const result = loadEnv(extendedSchema);
+      const result = loadEnv(extendedSchema, process.env);
 
       expect(result).toEqual({
         NODE_ENV: 'test',
-        LOG_LEVEL: 'debug',
         DATABASE_URL: 'postgres://test:5432/db',
         API_KEY: 'test-key',
       });

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { calculateSum } from '@repo/shared-lib';
 
-import config from '@/lib/config.js';
+import { env } from '@/lib/env.js';
 
 export function Calculator() {
   const [num1, setNum1] = useState('');
@@ -22,7 +22,7 @@ export function Calculator() {
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg border border-gray-100">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Calculator (Environment: {config.VITE_FOO})
+        Calculator (Environment: {env.VITE_FOO})
       </h2>
 
       <div className="mb-4">
