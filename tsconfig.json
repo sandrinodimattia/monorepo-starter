@@ -37,12 +37,6 @@
     // Target ECMAScript 2023.
     "target": "ES2023",
 
-    // Output compiled files to dist directory.
-    "outDir": "./dist",
-
-    // Root directory for source files.
-    "rootDir": "./src",
-
     // Skip type checking of declaration files.
     "skipLibCheck": true,
 

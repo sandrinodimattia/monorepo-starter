@@ -1,0 +1,19 @@
+{
+  "name": "@apps/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CLI application",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "dev": "tsx src/index.ts",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@clack/prompts": "1.0.0-alpha.4",
+    "@packages/math": "workspace:*",
+    "picocolors": "^1.1.1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@packages/math",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Math package offering basic math functions",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "build": "tsc -b",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "type-check": "tsc --noEmit"
+  }
+}
