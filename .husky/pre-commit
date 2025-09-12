@@ -1,0 +1,3 @@
+
+pnpm run -r lint
+pnpm run -r type-check

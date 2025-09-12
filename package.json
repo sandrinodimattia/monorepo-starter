@@ -1,0 +1,26 @@
+{
+  "name": "monorepo-node",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Example of a monorepo with Node.js",
+  "author": "Sandrino Di Mattia",
+  "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "monorepo",
+    "typescript"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "build": "pnpm run -r build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@tsconfig/node24": "^24.0.1",
+    "@types/node": "^24.3.1",
+    "husky": "^9.1.7",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

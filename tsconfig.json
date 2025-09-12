@@ -1,0 +1,55 @@
+{
+  "extends": "@tsconfig/node24/tsconfig.json",
+  "compilerOptions": {
+    // Treat files as modules even if it doesn't use import/export.
+    "moduleDetection": "force",
+
+    // Allow JSON modules to be imported.
+    "resolveJsonModule": true,
+
+    // Do not allow JS files to be imported from TS and vice versa.
+    "allowJs": false,
+
+    // Creates a build info file which allows the compiler to only build the changed files.
+    "composite": true,
+
+    // Use correct ESM import behavior.
+    "esModuleInterop": true,
+
+    // Disallow features that require cross-file awareness.
+    "isolatedModules": true,
+
+    // Preserve the original module syntax without transformation.
+    "verbatimModuleSyntax": true,
+
+    // Enable all strict type checking options.
+    "strict": true,
+
+    // Include ES2023 library definitions.
+    "lib": ["ES2023"],
+
+    // Use Node.js ESM module system.
+    "module": "NodeNext",
+
+    // Use Node.js module resolution algorithm.
+    "moduleResolution": "NodeNext",
+
+    // Target ECMAScript 2023.
+    "target": "ES2023",
+
+    // Output compiled files to dist directory.
+    "outDir": "./dist",
+
+    // Root directory for source files.
+    "rootDir": "./src",
+
+    // Skip type checking of declaration files.
+    "skipLibCheck": true,
+
+    // Disable declaration file generation to avoid conflicts
+    "declaration": true
+  },
+
+  // Exclude node_modules and dist directories.
+  "exclude": ["node_modules", "dist"]
+}
