@@ -1,5 +1,14 @@
 {
   "root": true,
+  "files": {
+    "includes": [
+      "./apps/**/*.ts",
+      "./packages/**/*.ts",
+      "!coverage",
+      "!node_modules",
+      "!dist"
+    ]
+  },
   "formatter": {
     "enabled": true,
     "lineWidth": 120,
