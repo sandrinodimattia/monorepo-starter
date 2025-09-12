@@ -4,8 +4,26 @@
     "enabled": true,
     "lineWidth": 120,
     "indentWidth": 2,
+    "attributePosition": "auto",
     "indentStyle": "space",
     "lineEnding": "lf"
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
   },
   "linter": {
     "enabled": true,
