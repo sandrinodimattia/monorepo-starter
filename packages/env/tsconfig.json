@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+
+  // Folders to include in the build.
+  "include": ["./src/**/*"],
+
+  // Folders to exclude from the build.
+  "exclude": ["node_modules"]
+}

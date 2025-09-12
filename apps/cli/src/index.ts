@@ -1,6 +1,7 @@
 import { select, intro, outro, isCancel } from '@clack/prompts';
 
 import { addCommand } from './commands/add.js';
+import { envCommand } from './commands/env.js';
 import { longRunningCommand } from './commands/long-running.js';
 
 async function main() {
@@ -16,6 +17,7 @@ async function main() {
     options: [
       { value: 'add', label: 'Add two numbers' },
       { value: 'long-running', label: 'Long running command' },
+      { value: 'env', label: 'List environment variables' },
     ],
   });
 
@@ -32,6 +34,9 @@ async function main() {
       break;
     case 'long-running':
       await longRunningCommand();
+      break;
+    case 'env':
+      await envCommand();
       break;
   }
 }

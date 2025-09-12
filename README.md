@@ -35,3 +35,9 @@ And the following command shows how you can install external dependencies:
 ```bash
 pnpm --filter @apps/cli add @clack/prompts
 ```
+
+Adding a global package:
+
+```bash
+pnpm add -D vitest -w
+```
