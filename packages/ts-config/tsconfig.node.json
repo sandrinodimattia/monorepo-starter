@@ -47,8 +47,5 @@
 
     // Disable declaration file generation to avoid conflicts
     "declaration": true
-  },
-
-  // Exclude node_modules and dist directories.
-  "exclude": ["node_modules", "dist"]
+  }
 }
