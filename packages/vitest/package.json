@@ -1,0 +1,21 @@
+{
+  "name": "@packages/vitest",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Vitest configuration package",
+  "type": "module",
+  "exports": {
+    "./vitest.config.lib": "./src/lib.ts",
+    "./vitest.config.node": "./src/node.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@packages/ts-config": "workspace:*"
+  },
+  "dependencies": {
+    "vitest": "^3.2.4"
+  }
+}
