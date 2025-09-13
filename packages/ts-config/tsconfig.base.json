@@ -52,9 +52,6 @@
     // Disable importing TypeScript extensions.
     "allowImportingTsExtensions": false,
 
-    // Enable exact optional property types.
-    "exactOptionalPropertyTypes": true,
-
     // Disallow implicit any types.
     "noImplicitAny": true,
 
@@ -63,6 +60,12 @@
 
     // Enable strict checking of indexed access.
     "noUncheckedIndexedAccess": true,
+
+    // Only allow syntax that can be erased during compilation.
+    "erasableSyntaxOnly": true,
+
+    // Report errors when importing modules with unchecked side effects.
+    "noUncheckedSideEffectImports": true,
 
     // Use define semantics for class fields.
     "useDefineForClassFields": true,

@@ -1,0 +1,34 @@
+{
+  // JSON schema for TypeScript configuration validation.
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  // Display name for the configuration.
+  "display": "React",
+
+  // Extend the base TypeScript configuration.
+  "extends": "./tsconfig.base.json",
+
+  // Compiler options specific to React.
+  "compilerOptions": {
+    // Use React JSX transform.
+    "jsx": "react-jsx",
+
+    // Use React JSX import source.
+    "jsxImportSource": "react",
+
+    // Include ES2022 library definitions.
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
+
+    // Use ES2022 module system.
+    "module": "es2022",
+
+    // Use bundler module resolution.
+    "moduleResolution": "bundler",
+
+    // Target ECMAScript 2022.
+    "target": "es2022",
+
+    // Include React type definitions.
+    "types": ["react", "react-dom"]
+  }
+}

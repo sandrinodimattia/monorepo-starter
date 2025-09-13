@@ -10,13 +10,13 @@
 
   // Compiler options specific to TypeScript libraries.
   "compilerOptions": {
-    // Use Node.js ESM module system.
+    // Use ES2022 module system.
     "module": "es2022",
 
     // Use bundler module resolution.
     "moduleResolution": "bundler",
 
-    // Target ECMAScript 2024.
-    "target": "es2024"
+    // Target ECMAScript 2022.
+    "target": "es2022"
   }
 }

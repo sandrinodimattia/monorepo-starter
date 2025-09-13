@@ -8,14 +8,8 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     tailwindcss(),
     react(),
-    mode === 'production' &&
-      visualizer({
-        filename: 'dist/stats.html',
-        gzipSize: true,
-        brotliSize: true,
-      }),
+    mode === 'production' && visualizer({ filename: 'dist/stats.html', gzipSize: true, brotliSize: true }),
   ].filter(Boolean),
-
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -43,6 +37,8 @@ export default defineConfig(({ mode }) => ({
 
                   return 'vendor';
                 }
+
+                return;
               },
 
               // Optimize chunk naming for better caching
@@ -117,16 +113,15 @@ export default defineConfig(({ mode }) => ({
       : undefined,
 
   // Additional build optimizations.
-  esbuild:
-    mode === 'production'
-      ? {
-          target: 'es2020',
-          treeShaking: true,
-          minifyIdentifiers: true,
-          minifySyntax: true,
-          minifyWhitespace: true,
-          jsx: 'automatic',
-          jsxImportSource: 'react',
-        }
-      : undefined,
+  esbuild: {
+    jsx: 'automatic',
+    jsxImportSource: 'react',
+    ...(mode === 'production' && {
+      target: 'es2020',
+      treeShaking: true,
+      minifyIdentifiers: true,
+      minifySyntax: true,
+      minifyWhitespace: true,
+    }),
+  },
 }));
