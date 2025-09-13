@@ -18,5 +18,9 @@
     "dotenv": "^17.2.2",
     "picocolors": "^1.1.1",
     "zod": "^4.1.8"
+  },
+  "devDependencies": {
+    "@packages/ts-config": "workspace:*",
+    "@types/node": "^24.3.1"
   }
 }

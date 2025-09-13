@@ -1,5 +1,4 @@
 {
-  "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
     // Treat files as modules even if it doesn't use import/export.
     "moduleDetection": "force",
@@ -26,16 +25,22 @@
     "strict": true,
 
     // Include ES2023 library definitions.
-    "lib": ["ES2023"],
+    "lib": [
+      "es2024",
+      "ESNext.Array",
+      "ESNext.Collection",
+      "ESNext.Iterator",
+      "ESNext.Promise"
+    ],
 
     // Use Node.js ESM module system.
-    "module": "NodeNext",
+    "module": "nodenext",
 
     // Use Node.js module resolution algorithm.
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "nodenext",
 
-    // Target ECMAScript 2023.
-    "target": "ES2023",
+    // Target ECMAScript 2024.
+    "target": "es2024",
 
     // Skip type checking of declaration files.
     "skipLibCheck": true,
