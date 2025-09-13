@@ -1,9 +1,9 @@
 {
-  "name": "monorepo-node",
+  "name": "monorepo-starter",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "A minimal boilerplate for a monorepo using Node.js, React, Turborepo and TypeScript",
+  "description": "A minimal boilerplate for a monorepo using Node.js, React, Turbo, TypeScript and Biome",
   "author": "Sandrino Di Mattia",
   "license": "MIT",
   "keywords": [
@@ -18,15 +18,15 @@
   },
   "packageManager": "pnpm@10.16.0",
   "scripts": {
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf pnpm-lock.yaml && pnpm run -r clean",
     "prepare": "husky",
-    "build": "turbo run build",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf pnpm-lock.yaml && pnpm run -r clean",
     "dev": "turbo run dev",
+    "build": "turbo run build",
     "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
-    "test:coverage": "turbo run test:coverage",
-    "type-check": "turbo run type-check"
+    "test:coverage": "turbo run test:coverage"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",

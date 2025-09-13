@@ -3,19 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Environment package offering basic environment functions",
+  "description": "A TypeScript library for type-safe environment variable management using Zod schemas",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "build": "tsc -b",
-    "format": "biome format --write .",
     "lint": "biome lint .",
     "type-check": "tsc --noEmit",
+    "format": "biome format --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "zod": "^4.1.8"

@@ -5,13 +5,13 @@
   "type": "module",
   "description": "Web application",
   "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "dev": "vite",
     "build": "tsc -b && vite build --mode production",
-    "lint": "biome lint .",
     "preview": "vite preview",
+    "lint": "biome lint .",
     "type-check": "tsc --noEmit",
-    "format": "biome format --write .",
-    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@packages/env": "workspace:*",

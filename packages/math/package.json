@@ -8,11 +8,11 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo",
     "build": "tsc -b",
-    "format": "biome format --write .",
     "lint": "biome lint .",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
+    "format": "biome format --write ."
   },
   "devDependencies": {
     "@packages/ts-config": "workspace:*"
