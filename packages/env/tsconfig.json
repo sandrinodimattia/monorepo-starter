@@ -1,22 +1,7 @@
 {
-  "extends": "@packages/ts-config/tsconfig.node",
-  "compilerOptions": {
-    // Creates a build info file which allows the compiler to only build the changed files.
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-
-    // Output directory for compiled files.
-    "outDir": "./dist",
-
-    // Root directory for compiled files.
-    "rootDir": "./src"
-  },
-
-  // Folders to include in the build.
-  "include": ["./src/**/*"],
-
-  // Folders to exclude from the build.
-  "exclude": ["node_modules", "dist"],
-
-  // References to other packages.
-  "references": []
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.lib.json" },
+    { "path": "./tsconfig.test.json" }
+  ]
 }
