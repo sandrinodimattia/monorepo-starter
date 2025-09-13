@@ -1,25 +1,26 @@
 # Example of a Modern Monorepo
 
-This is an example of a modern monorepo using PNPM, Node.js 24, TypeScript and Biome.
+This is an example of a modern monorepo using PNPM, Node.js 24, Turbo, TypeScript and Biome.
 
 ## Getting Started
 
 ### Installing the dependencies
 
 ```bash
+pnpm add turbo --global
 pnpm install
 ```
 
 ### Building the project
 
 ```bash
-pnpm run build
+turbo build
 ```
 
 ### Running the CLI
 
 ```bash
-pnpm --filter @apps/cli run dev
+turbo @apps/cli#dev
 ```
 
 ### Adding dependencies
