@@ -8,6 +8,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "build": "tsc -b",
     "format": "biome format --write .",
     "lint": "biome lint .",
     "type-check": "tsc --noEmit",
@@ -19,6 +20,7 @@
     "zod": "^4.1.8"
   },
   "devDependencies": {
+    "@packages/ts-config": "workspace:*",
     "vitest": "^3.2.4"
   }
 }

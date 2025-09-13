@@ -23,7 +23,7 @@ export function createEnvSchema<T extends z.ZodRawShape>(
  */
 export function loadEnv<T extends z.ZodRawShape>(
   schema: z.ZodObject<T & typeof baseEnvSchema.shape>,
-  env: Record<string, string | undefined>,
+  env: Record<string, string | number | boolean | undefined>,
 ): z.infer<z.ZodObject<T & typeof baseEnvSchema.shape>> {
   try {
     return schema.parse(env);
