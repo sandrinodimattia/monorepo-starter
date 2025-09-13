@@ -14,7 +14,8 @@
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
   },
   "dependencies": {
     "zod": "^4.1.8"

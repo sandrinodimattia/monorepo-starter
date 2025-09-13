@@ -1,0 +1,22 @@
+{
+  // JSON schema for TypeScript configuration validation.
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  // Display name for the configuration.
+  "display": "TypeScript Library",
+
+  // Extend the base TypeScript configuration
+  "extends": "./tsconfig.base.json",
+
+  // Compiler options specific to TypeScript libraries.
+  "compilerOptions": {
+    // Use Node.js ESM module system.
+    "module": "es2022",
+
+    // Use bundler module resolution.
+    "moduleResolution": "bundler",
+
+    // Target ECMAScript 2024.
+    "target": "es2024"
+  }
+}

@@ -10,7 +10,8 @@
     "lint": "biome lint .",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
   },
   "dependencies": {
     "@packages/env": "workspace:*",

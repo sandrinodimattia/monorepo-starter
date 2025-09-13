@@ -1,0 +1,82 @@
+{
+  // JSON schema for TypeScript configuration validation.
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  // Compiler options for TypeScript.
+  "compilerOptions": {
+    // Generate corresponding .d.ts files.
+    "declaration": true,
+
+    // Generate source maps for declaration files.
+    "declarationMap": true,
+
+    // Generate source maps for debugging.
+    "sourceMap": true,
+
+    // Enable interop between CommonJS and ES Modules.
+    "esModuleInterop": true,
+
+    // Ensure each file is treated as a separate module.
+    "isolatedModules": true,
+
+    // Allow JSON modules to be imported.
+    "resolveJsonModule": true,
+
+    // Skip type checking of declaration files.
+    "skipLibCheck": true,
+
+    // Enable strict null checks.
+    "strictNullChecks": true,
+
+    // Enable strict function types.
+    "strictFunctionTypes": true,
+
+    // Enable strict bind, call, and apply checks.
+    "strictBindCallApply": true,
+
+    // Report errors on unused local variables.
+    "noUnusedLocals": true,
+
+    // Report errors on unused parameters.
+    "noUnusedParameters": true,
+
+    // Report errors when functions don't return on all code paths.
+    "noImplicitReturns": true,
+
+    // Report errors for fallthrough cases in switch statements.
+    "noFallthroughCasesInSwitch": true,
+
+    // Enable all strict type checking options.
+    "strict": true,
+
+    // Disable importing TypeScript extensions.
+    "allowImportingTsExtensions": false,
+
+    // Enable exact optional property types.
+    "exactOptionalPropertyTypes": true,
+
+    // Disallow implicit any types.
+    "noImplicitAny": true,
+
+    // Require explicit override keyword.
+    "noImplicitOverride": true,
+
+    // Enable strict checking of indexed access.
+    "noUncheckedIndexedAccess": true,
+
+    // Use define semantics for class fields.
+    "useDefineForClassFields": true,
+
+    // Treat files as modules even if it doesn't use import/export.
+    "moduleDetection": "force",
+
+    // Do not allow JS files to be imported from TS and vice versa.
+    "allowJs": false,
+
+    // Disable incremental compilation.
+    "incremental": false,
+
+    // Preserve the original module syntax without transformation.
+    "verbatimModuleSyntax": true
+  }
+}

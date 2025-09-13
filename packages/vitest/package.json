@@ -9,8 +9,8 @@
     "./vitest.config.node": "./src/node.ts"
   },
   "scripts": {
-    "clean": "rm -rf dist",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf .turbo"
   },
   "devDependencies": {
     "@packages/ts-config": "workspace:*"
