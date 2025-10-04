@@ -18,7 +18,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "zod": "^4.1.8"
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@packages/ts-config": "workspace:*",
