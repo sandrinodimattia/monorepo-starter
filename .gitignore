@@ -145,3 +145,6 @@ vite.config.ts.timestamp-*
 
 # OSX
 .DS_Store
+
+# Tanstack
+.tanstack

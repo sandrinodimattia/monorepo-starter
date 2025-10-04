@@ -1,15 +1,17 @@
 {
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "root": true,
   "files": {
     "includes": [
-      "./apps/**/src/**/*.ts",
-      "./apps/**/src/**/*.tsx",
-      "./apps/**/vite.config.ts",
-      "./apps/**/vitest.config.ts",
-      "./packages/**/src/**/*.ts",
-      "./packages/**/src/**/*.tsx",
-      "./packages/**/vite.config.ts",
-      "./packages/**/vitest.config.ts",
+      "apps/**/src/**/*.ts",
+      "apps/**/src/**/*.tsx",
+      "apps/**/vite.config.ts",
+      "apps/**/vitest.config.ts",
+      "packages/**/src/**/*.ts",
+      "packages/**/src/**/*.tsx",
+      "packages/**/vite.config.ts",
+      "packages/**/vitest.config.ts",
+      "!apps/web/src/routeTree.gen.ts",
       "!coverage",
       "!node_modules",
       "!dist"

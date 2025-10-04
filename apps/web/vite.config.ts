@@ -3,10 +3,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { tanstackRouter } from '@tanstack/router-plugin/vite';
 
 export default defineConfig(({ mode }) => ({
   plugins: [
     tailwindcss(),
+    tanstackRouter({ target: 'react', autoCodeSplitting: true }),
     react(),
     mode === 'production' && visualizer({ filename: 'dist/stats.html', gzipSize: true, brotliSize: true }),
   ].filter(Boolean),

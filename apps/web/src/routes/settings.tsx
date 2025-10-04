@@ -1,6 +1,12 @@
-import { env } from '../../lib/env';
+import { createFileRoute } from '@tanstack/react-router';
 
-export function EnvironmentVariables() {
+import { env } from '../lib/env';
+
+export const Route = createFileRoute('/settings')({
+  component: SettingsComponent,
+});
+
+function SettingsComponent() {
   const envVars = [
     { key: 'NODE_ENV', value: env.NODE_ENV },
     { key: 'BASE_URL', value: env.BASE_URL },
@@ -12,19 +18,19 @@ export function EnvironmentVariables() {
   ];
 
   return (
-    <div className="border border-gray-200 p-8">
+    <div className="w-full">
       <div className="space-y-6">
-        <div className="text-center mb-8">
-          <h2 className="text-xl font-normal mb-2">Environment Variables</h2>
+        <div className="mb-8">
+          <h2 className="text-xl font-normal mb-2">Settings</h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           {envVars.map(({ key, value }) => (
             <div
               key={key}
-              className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0"
+              className="flex items-center justify-between py-1 border-b border-gray-100 last:border-b-0"
             >
-              <div className="font-medium text-gray-900">{key}</div>
+              <div className="font-medium text-gray-900 text-sm">{key}</div>
               <div className="text-gray-600 font-mono text-sm bg-gray-50 px-3 py-1 rounded">
                 {value}
               </div>

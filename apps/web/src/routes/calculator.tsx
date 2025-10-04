@@ -1,7 +1,12 @@
-import { useState } from 'react';
 import { add } from '@packages/math';
+import { createFileRoute } from '@tanstack/react-router';
+import { useState } from 'react';
 
-export function Calculator() {
+export const Route = createFileRoute('/calculator')({
+  component: CalculatorComponent,
+});
+
+function CalculatorComponent() {
   const [num1, setNum1] = useState('');
   const [num2, setNum2] = useState('');
   const [result, setResult] = useState<number | null>(null);
