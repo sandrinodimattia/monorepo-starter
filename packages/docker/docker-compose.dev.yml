@@ -1,0 +1,50 @@
+services:
+  api:
+    build:
+      context: ../../
+      dockerfile: ./apps/api/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    develop:
+      watch:
+        - action: sync
+          path: ../../apps/api/src
+          target: /app/apps/api/src
+        - action: sync
+          path: ../../apps/api/package.json
+          target: /app/apps/api/package.json
+
+  web:
+    build:
+      context: ../../
+      dockerfile: ./apps/web/Dockerfile.dev
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+      - VITE_ORPC_URL=http://localhost:8000/api/rpc
+    develop:
+      watch:
+        - action: sync
+          path: ../../apps/api/src
+          target: /app/apps/api/src
+        - action: sync
+          path: ../../apps/api/package.json
+          target: /app/apps/api/package.json
+        - action: sync
+          path: ../../apps/web/src
+          target: /app/apps/web/src
+        - action: sync
+          path: ../../apps/web/package.json
+          target: /app/apps/web/package.json
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./Caddyfile.dev:/etc/caddy/Caddyfile:ro
+    depends_on:
+      - api

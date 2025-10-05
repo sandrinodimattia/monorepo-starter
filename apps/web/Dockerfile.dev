@@ -1,0 +1,37 @@
+FROM node:24-alpine AS base
+
+# Enable corepack for pnpm
+RUN corepack enable
+
+# Set the working directory
+WORKDIR /app
+
+# Copy root-level files for monorepo install
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+
+# Copy shared packages
+COPY packages/ ./packages/
+
+# Copy Web app
+COPY apps/web/ ./apps/web/
+COPY apps/api/ ./apps/api/
+
+# Install dependencies at root (handles workspaces)
+RUN pnpm install --frozen-lockfile
+
+# Use non-root user for security
+RUN addgroup -g 1001 appgroup && adduser -u 1001 -G appgroup -S appuser
+
+# Change ownership of node_modules to the non-root user
+RUN chown -R appuser:appgroup /app/node_modules /app/apps/web/node_modules
+
+USER appuser
+
+# Expose the port
+EXPOSE 5173
+
+# List the files
+RUN ls -la
+
+# Start the development server
+CMD ["pnpm","--filter","@apps/web","dev"]
