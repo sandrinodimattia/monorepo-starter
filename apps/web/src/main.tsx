@@ -6,11 +6,18 @@ import { RouterProvider, createRouter } from '@tanstack/react-router';
 
 import './index.css';
 import './globals.css';
-// Set up a Router instance
+import { getContext, TanStackQueryProvider } from './lib/tanstack/query';
+
+const queryContext = getContext();
 const router = createRouter({
   routeTree,
+  context: {
+    ...queryContext,
+  },
   defaultPreload: 'intent',
   scrollRestoration: true,
+  defaultStructuralSharing: true,
+  defaultPreloadStaleTime: 0,
 });
 
 // Register things for typesafety
@@ -28,6 +35,8 @@ if (!rootElement) {
 const root = createRoot(rootElement);
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <TanStackQueryProvider {...queryContext}>
+      <RouterProvider router={router} />
+    </TanStackQueryProvider>
   </StrictMode>
 );

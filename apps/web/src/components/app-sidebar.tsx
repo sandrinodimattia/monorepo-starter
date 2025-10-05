@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { Link } from '@tanstack/react-router';
-import { Calculator, Home, Settings } from 'lucide-react';
+import { Calculator, Heart, Home, Settings } from 'lucide-react';
 
 import {
   Sidebar,
@@ -29,6 +29,11 @@ const items = [
     title: 'Settings',
     url: '/settings',
     icon: Settings,
+  },
+  {
+    title: 'Health',
+    url: '/health',
+    icon: Heart,
   },
 ];
 

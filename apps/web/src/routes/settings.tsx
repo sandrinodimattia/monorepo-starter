@@ -14,7 +14,7 @@ function SettingsComponent() {
     { key: 'DEV', value: env.DEV.toString() },
     { key: 'PROD', value: env.PROD.toString() },
     { key: 'SSR', value: env.SSR.toString() },
-    { key: 'VITE_FOO', value: env.VITE_FOO },
+    { key: 'VITE_ORPC_URL', value: env.VITE_ORPC_URL },
   ];
 
   return (

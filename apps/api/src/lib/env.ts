@@ -10,6 +10,10 @@ config({
 
 const schema = createEnvSchema(
   z.object({
+    PORT: z
+      .string()
+      .default('3000')
+      .transform((val) => parseInt(val, 10)),
     FOO: z.string(),
   })
 );

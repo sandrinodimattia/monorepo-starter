@@ -8,7 +8,7 @@ const schema = createEnvSchema(
     DEV: z.boolean(),
     PROD: z.boolean(),
     SSR: z.boolean(),
-    VITE_FOO: z.string(),
+    VITE_ORPC_URL: z.string(),
   })
 );
 
